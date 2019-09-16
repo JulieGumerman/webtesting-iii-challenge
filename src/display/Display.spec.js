@@ -45,13 +45,13 @@ test("when locked or closed, use red-led class", () => {
     expect(locked.classList).toContain("red-led");
     expect(closed.classList).toContain("red-led");
 
-
-    
-
-
-
 })
 
 test("when unlocked or open, use green-led class", () => {
+    let displayOpen = render(<Display locked={false} closed={false}/>);
+    let opened = displayOpen.getByTestId(/random/i);
+    let unlocked = displayOpen.getByTestId(/closedy/i);
 
+    expect(opened.classList).toContain("green-led");
+    expect(unlocked.classList).toContain("green-led");
 })
