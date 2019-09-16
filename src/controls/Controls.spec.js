@@ -23,10 +23,13 @@ test("if gate is locked, close button is disabled", () => {
     expect(openButton.disabled).toEqual(false);
 }) 
 
+
 test ("locked button is disabled when gate is open", () => {
     const { getByTestId } = render(<Controls />);
-    const lockButton = getByTestId(/lock/i);
     const openButton = getByTestId(/open/i);
+    const lockButton = getByTestId(/lock/i);
 
-    expect(openButton.disabled={!locked}).toBe(true);
+    fireEvent.click(openButton);
+
+    expect(lockButton.disabled).toBe(true);
 })
