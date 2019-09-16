@@ -28,10 +28,27 @@ test("displays closed if closed prop is true and open otherwise", () =>{
 })
 
 test("displays locked if locked prop is true and unlocked otherwise", () => {
+    let displayLocked = render(<Display locked={true}/>);
+    let displayOpen = render(<Display locked={false}/>);
+
+    expect(displayLocked.getByText("Locked"));
+    expect(displayOpen.getByText("Unlocked"));
 
 })
 
 test("when locked or closed, use red-led class", () => {
+    let displayLocked = render(<Display locked={true} closed={true}/>);
+//    let displayClosed = render(<Display closed={true}/>);
+    let locked = displayLocked.getByTestId(/random/i);
+    let closed = displayLocked.getByTestId(/closedy/i);
+
+    expect(locked.classList).toContain("red-led");
+    expect(closed.classList).toContain("red-led");
+
+
+    
+
+
 
 })
 

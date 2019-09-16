@@ -10,11 +10,13 @@ Object {
       >
         <div
           class="led green-led"
+          data-testid="random"
         >
           Unlocked
         </div>
         <div
           class="led green-led"
+          data-testid="closedy"
         >
           Open
         </div>
@@ -27,11 +29,13 @@ Object {
     >
       <div
         class="led green-led"
+        data-testid="random"
       >
         Unlocked
       </div>
       <div
         class="led green-led"
+        data-testid="closedy"
       >
         Open
       </div>
